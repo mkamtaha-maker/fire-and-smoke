@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fire & Smoke Smash Burgers Menu</title>
+  <style>
+    :root {
+      --bg: #18181b;
+      --text: #fafafa;
+      --accent: #dc2626;
+      --card: #27272a;
+      --border: #3f3f46;
+      --sub: #a1a1aa;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { 
+      background: var(--bg); 
+      color: var(--text); 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    header {
+      text-align: center;
+      padding: 24px 0;
+      border-bottom: 2px solid var(--accent);
+      margin-bottom: 24px;
+    }
+
+    h1 { font-size: 28px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; }
+    .description { font-size: 14px; color: var(--sub); margin-top: 8px; }
+    .contact-link { 
+      display: inline-block; 
+      margin-top: 12px; 
+      color: var(--text); 
+      text-decoration: none; 
+      font-weight: 600; 
+      font-size: 14px; 
+      border: 1px solid var(--border); 
+      padding: 4px 12px; 
+      border-radius: 6px;
+    }
+
+    .category-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 24px 0 16px;
+      padding-left: 12px;
+      border-left: 4px solid var(--accent);
+    }
+    [dir="rtl"] .category-title {
+      padding-left: 0;
+      padding-right: 12px;
+      border-left: 0;
+      border-right: 4px solid var(--accent);
+    }
+
+    .item-box { 
+      background: var(--card); 
+      border: 1px solid var(--border); 
+      border-radius: 12px; 
+      padding: 14px; 
+      margin-bottom: 12px; 
+      box-shadow: 0 2px 5px rgba(0,0,0,0.03); 
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .item-name { font-weight: 700; font-size: 16px; }
+    .item-price { font-weight: 700; color: var(--accent); font-size: 16px; }
+    .item-desc { font-size: 13px; color: var(--sub); }
+
+    .lang-switch button { transition: all 0.2s ease; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="lang-switch" style="display:flex; justify-content:center; gap:8px; margin-bottom:20px;">
+    <button id="btn-en" onclick="setLang('en')" style="padding:6px 18px; border-radius:20px; font-weight:600; font-size:13px; border:1px solid var(--border); background:var(--accent); color:#ffffff; cursor:pointer;">English</button>
+    <button id="btn-ar" onclick="setLang('ar')" style="padding:6px 18px; border-radius:20px; font-weight:600; font-size:13px; border:1px solid var(--border); background:var(--card); color:var(--text); cursor:pointer;">العربية</button>
+  </div>
+
+  <!-- ENGLISH SECTION -->
+  <div id="section-en" dir="ltr">
+    <header>
+      <h1>Fire & Smoke</h1>
+      <p class="description">Dry-aged beef smash burgers, fiery loaded fries, and Nashville hot chicken tenders cooked fresh to order.</p>
+      <a href="tel:+441619988112" class="contact-link">
+        <bdi style="direction:ltr; display:inline-block;">+44 161 998 8112</bdi>
+      </a>
+    </header>
+
+    <h2 class="category-title">Smash Burgers</h2>
+    
+    <div class="item-box">
+      <div class="item-header">
+        <span class="item-name">Double Bacon Jalapeño Smash</span>
+        <span class="item-price">£9.50</span>
+      </div>
+      <p class="item-desc">Two aged beef patties, crispy maple bacon, smoked cheddar, jalapeños, and fire sauce.</p>
+    </div>
+
+    <div class="item-box">
+      <div class="item-header">
+        <span class="item-name">Truffle & Crispy Onion Burger</span>
+        <span class="item-price">£10.20</span>
+      </div>
+      <p class="item-desc">Double smashed patties, Swiss cheese, roasted garlic aioli, and crispy shallots.</p>
+    </div>
+
+    <h2 class="category-title">Sides & Wings</h2>
+
+    <div class="item-box">
+      <div class="item-header">
+        <span class="item-name">Nashville Hot Wings (6 pcs)</span>
+        <span class="item-price">£6.80</span>
+      </div>
+      <p class="item-desc">Crispy buttermilk fried wings tossed in fiery chili oil, served with pickles.</p>
+    </div>
+
+    <div class="item-box">
+      <div class="item-header">
+        <span class="item-name">Loaded Smoked Brisket Fries</span>
+        <span class="item-price">£6.50</span>
+      </div>
+      <p class="item-desc">Seasoned skin-on fries topped with 12-hour pulled beef and melted cheese sauce.</p>
+    </div>
+  </div>
+
+  <!-- ARABIC SECTION -->
+  <div id="section-ar" dir="rtl" style="display:none;">
+    <header>
+      <h1>فاير أند سموك</h1>
+      <p class="description">سماش برجر لحم بقر معتق، بطاطس محملة حارة، وقطع دجاج ناشفيل المحضرة طازجة حسب الطلب.</p>
+      <a href="tel:+441619988112" class="contact-link">
+        <bdi style="direction:ltr; display:inline-block;">+44 161 998 8112</bdi>
+      </a>
+    </header>
+
+    <h2 class="category-title">سماش برجر</h2>
+    
+    <div class="item-box">
+      <div class="item-header">
+        <span class="item-name">دبل بيكن هلابينو سماش</span>
+        <span class="item-price">£9.50</span>
+      </div>
+      <p class="item-desc">شريحتا لحم معتق، مقرمشات البيكن بلمسة القيقب، جبن شيدر مدخن، هلابينو، وصلصة حارة.</p>
+    </div>
+
+    <div class="item-box">
+      <div class="item-header">
+        <span class="item-name">برجر الكمأة والبصل المقرمش</span>
+        <span class="item-price">£10.20</span>
+      </div>
+      <p class="item-desc">شريحتا سماش، جبنة سويسرية، صوص الأيولي بالثوم المشوي، وبصل مقرمش.</p>
+    </div>
+
+    <h2 class="category-title">المقبلات والأجنحة</h2>
+
+    <div class="item-box">
+      <div class="item-header">
+        <span class="item-name">أجنحة ناشفيل الحارة (6 قطع)</span>
+        <span class="item-price">£6.80</span>
+      </div>
+      <p class="item-desc">أجنحة دجاج مقلية مقرمشة بزيت الفلفل الحار مع مخلل الخيار.</p>
+    </div>
+
+    <div class="item-box">
+      <div class="item-header">
+        <span class="item-name">بطاطس محملة بلحم البريسكت</span>
+        <span class="item-price">£6.50</span>
+      </div>
+      <p class="item-desc">بطاطس مبهرة مغطاة بلحم البقر المدخن لمدة ١٢ ساعة وصلصة الجبن الذائبة.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function setLang(l) {
+    var e = document.getElementById('section-en');
+    var a = document.getElementById('section-ar');
+    var be = document.getElementById('btn-en');
+    var ba = document.getElementById('btn-ar');
+    if (l === 'ar') {
+      e.style.display = 'none';
+      a.style.display = 'block';
+      ba.style.background = 'var(--accent)';
+      ba.style.color = '#ffffff';
+      be.style.background = 'var(--card)';
+      be.style.color = 'var(--text)';
+    } else {
+      a.style.display = 'none';
+      e.style.display = 'block';
+      be.style.background = 'var(--accent)';
+      be.style.color = '#ffffff';
+      ba.style.background = 'var(--card)';
+      ba.style.color = 'var(--text)';
+    }
+  }
+</script>
+
+</body>
+</html>
